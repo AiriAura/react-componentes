@@ -1,42 +1,92 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f4f3;
+  font-family: 'Manjari', sans-serif;
+}
+
+.header {
+  grid-column: 1/6;
+  background-color: #76b852;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header p {
+  font-size: 1.2em;
+  margin-top: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6em;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2em auto;
+}
+
+.content {
+  grid-column: span 3;
+}
+
+.article {
+  background-color: #c7f0db;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.sidebar {
+  grid-column: span 2;
+  background-color: #76b852;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.sidebar img {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.related-post {
+  background-color: #4a865f;
+  color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.related-post:hover {
+  background-color: #a1d3b2;
+  color: #000;
+  cursor: pointer;
+}
+
+.footer {
+  grid-column: 1/6;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .content, .sidebar, .related-post {
+      grid-column: 1/-1;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
